@@ -14,7 +14,7 @@ module.exports = {
 
   _checkClickAway: function(e) {
     var el;
-    if (typeof React.findDOMNode === 'undefined') {
+    if (typeof React.findDOMNode !== 'undefined') {
       el = React.findDOMNode(this)
     } else {
       el = this.getDOMNode();
