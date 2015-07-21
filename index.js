@@ -13,7 +13,12 @@ module.exports = {
   },
 
   _checkClickAway: function(e) {
-    var el = React.findDOMNode(this);
+    var el;
+    if (typeof React.findDOMNode === 'undefined') {
+      el = React.findDOMNode(this)
+    } else {
+      el = this.getDOMNode();
+    }
 
       // Check if the target is inside the current component
       if (this.isMounted() &&
